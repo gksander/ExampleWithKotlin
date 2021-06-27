@@ -12,7 +12,10 @@ class MainApplication : Application(), ReactApplication {
 
     override fun getPackages(): MutableList<ReactPackage> {
       val packages = PackageList(this).packages;
-      // Add your packages here.
+      /**
+       * Regsiter your packages here.
+       */
+      packages.add(ExamplePackage());
       return packages;
     }
   }
@@ -25,9 +28,6 @@ class MainApplication : Application(), ReactApplication {
     initializeFlipper(this, reactNativeHost.reactInstanceManager);
   }
 
-  /**
-   * TODO: Initialize flipper
-   */
   companion object {
     private fun initializeFlipper(context: Context, reactInstanceManager: ReactInstanceManager) {
       if (BuildConfig.DEBUG) {
